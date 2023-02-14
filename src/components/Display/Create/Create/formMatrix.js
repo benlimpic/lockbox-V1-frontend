@@ -12,10 +12,6 @@ import axios from "axios";
 import SmallMatrix from "../../../Data/Create/smallMatrix.js";
 import "../../../../App.css";
 
-async function getUser() {
-  const response = await axios.get("/logged_in", { withCredentials: true })
-  return response.data.user.id
-}
 
 export const FormMatrix = ({
   tmk,
@@ -85,7 +81,7 @@ export const FormMatrix = ({
           contactEmail,
           contactPhone,
           contactDetails,
-          user_id: getUser(),
+          user_id: 1,
         })
       .then((response) => {
         if (response.statusText === "Created") {
