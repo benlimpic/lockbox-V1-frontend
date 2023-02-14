@@ -13,14 +13,15 @@ const Signup = (props) => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("/registrations", { withCredentials: true },
-        {
-          user: {
-            email,
-            password,
-            password_confirmation: passwordConfirmation,
-          },
-        }
+      .post("/registrations", 
+      {
+        user: {
+          email,
+          password,
+          password_confirmation: passwordConfirmation,
+        },
+      }
+      , { withCredentials: true },
       )
       .then((response) => {
         console.log(response);
