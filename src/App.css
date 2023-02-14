@@ -1,0 +1,55 @@
+/* .App {
+  text-align: center;
+} */
+
+.usable {
+  color: green;
+}
+
+.unusable {
+  color: rgb(144, 141, 141);
+  text-decoration-line: line-through;
+  text-decoration-style: solid;
+  text-decoration-color: red;
+}
+
+.usableMaster {
+  color: green;
+  font-size: 18px;
+}
+
+.unusableMaster {
+  color: rgb(144, 141, 141);
+  font-size: 18px;
+  text-decoration-line: line-through;
+  text-decoration-style: solid;
+  text-decoration-color: red;
+}
+
+.hover {
+  color: rgba(34, 34, 34, 0.473);
+}
+
+.isLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%vw;
+  width: 100%vw;
+}
+
+.tableHeader {
+  position: sticky;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tableBody {
+  font-size: 16px;
+  height: 30rem;
+  overflow-y: scroll;
+}
+
+
+

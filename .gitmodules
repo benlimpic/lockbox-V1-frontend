@@ -1,0 +1,3 @@
+[submodule "lockbox"]
+	path = lockbox
+	url = git@github.com:benlimpic/lockbox.git
