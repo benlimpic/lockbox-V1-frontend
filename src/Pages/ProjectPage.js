@@ -17,7 +17,7 @@ import masterKeyNamer from "../components/Functions/Namers/masterKeyNamer";
 import isUsable from "../components/Functions/PageSort/isUsable";
 
 async function getProject(id) {
-  const response = await axios.get(`http://localhost:3000/api/v1/projects/${id}`)
+  const response = await axios.get(`/api/v1/projects/${id}`)
   return response
 }
 

@@ -71,7 +71,7 @@ function KeyForm(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/v1/projects/${props.projectId}/keys`)
+      .get(`/api/v1/projects/${props.projectId}/keys`)
       .then((response) => {
         let data = response.data
         setAllKeys(data)
@@ -83,7 +83,7 @@ function KeyForm(props) {
     e.preventDefault();
 
     axios
-    .post(`http://localhost:3000/api/v1/projects/${props.projectId}/keys`, {
+    .post(`/api/v1/projects/${props.projectId}/keys`, {
 
       project_id: props.projectId,
       mac: props.keyClick[4],

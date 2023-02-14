@@ -23,7 +23,7 @@ function KeyForm(props) {
     (keyId) => {
       axios
         .get(
-          `http://localhost:3000/api/v1/projects/${props.projectId}/keys/${keyId}`
+          `/api/v1/projects/${props.projectId}/keys/${keyId}`
         )
         .then((response) => {
           setFetchKeyData(response.data);

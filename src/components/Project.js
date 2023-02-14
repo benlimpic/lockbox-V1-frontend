@@ -13,12 +13,12 @@ import MAC from "./Functions/PageSort/MAC";
 import "../App.css";
 
 async function getProject(projectId) {
-  const response = await axios.get( `http://localhost:3000/api/v1/projects/${projectId}`);
+  const response = await axios.get( `/api/v1/projects/${projectId}`);
   return response.data;
 }
 
 async function getKeys(projectId) {
-  const response = await axios.get(`http://localhost:3000/api/v1/projects/${projectId}/keys`);
+  const response = await axios.get(`/api/v1/projects/${projectId}/keys`);
   return response.data;
 }
 

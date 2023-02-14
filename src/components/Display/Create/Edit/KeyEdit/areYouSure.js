@@ -24,7 +24,7 @@ function AreYouSure(props) {
     e.preventDefault();
     if (deleteConfirm === "DELETE") {
       axios
-        .delete(`http://localhost:3000/api/v1/projects/${props.projectId}/keys/${props.keyId}`)
+        .delete(`/api/v1/projects/${props.projectId}/keys/${props.keyId}`)
         .then((res) => {
           console.log(res);
           console.log(res.data);

@@ -8,7 +8,7 @@ export const ProjectsPage = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/projects")
+      .get("/api/v1/projects")
       .then((response) => {
         setProjects(response.data);
       })

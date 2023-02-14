@@ -21,7 +21,7 @@ const AssignedTable = (props) => {
 
   const getData = () => {
     axios
-      .get(`http://localhost:3000/api/v1/projects/${projectId}/keys`)
+      .get(`/api/v1/projects/${projectId}/keys`)
       .then((result) => setData(result.data));
   };
 

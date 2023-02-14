@@ -80,7 +80,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
   
   axios
-  .patch(`http://localhost:3000/api/v1/projects/${props.keyData.project_id}/keys/${props.keyData.id}`, {
+  .patch(`/api/v1/projects/${props.keyData.project_id}/keys/${props.keyData.id}`, {
     
     assigneeName,
     assigneeEmail,

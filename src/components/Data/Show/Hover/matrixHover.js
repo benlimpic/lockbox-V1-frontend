@@ -6,7 +6,7 @@ import "../../../../App.css";
 
 async function getKeys(projectId) {
   const response = await axios.get(
-    `http://localhost:3000/api/v1/projects/${projectId}/keys/`
+    `/api/v1/projects/${projectId}/keys/`
   );
   return response.data;
 }

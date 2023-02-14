@@ -15,7 +15,7 @@ const KeyModal = (props) => {
 
   const getTMK = useCallback(() => {
     axios
-      .get(`http://localhost:3000/api/v1/projects/${id}`)
+      .get(`/api/v1/projects/${id}`)
       .then((result) => {
         setFetchTMK(result.data.tmk)
       })

@@ -43,7 +43,7 @@ export const FormEdit = (props) => {
     e.preventDefault();
     
     axios
-    .patch(`http://localhost:3000/api/v1/projects/${props.projectId}`, {
+    .patch(`/api/v1/projects/${props.projectId}`, {
       siteName,
       siteAddress,
       siteCity,

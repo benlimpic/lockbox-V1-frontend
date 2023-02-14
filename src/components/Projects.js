@@ -22,7 +22,7 @@ const Projects = (props) => {
 
   const getData = () => {
     axios
-      .get(`http://localhost:3000/api/v1/projects`)
+      .get(`/api/v1/projects`)
       .then((result) => setData(result.data));
   };
 

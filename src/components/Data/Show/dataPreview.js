@@ -11,7 +11,7 @@ import Container from "react-bootstrap/Container";
 
 async function getKeys(projectId) {
   const response = await axios.get(
-    `http://localhost:3000/api/v1/projects/${projectId}/keys`
+    `/api/v1/projects/${projectId}/keys`
   );
   return response.data;
 }
@@ -157,7 +157,7 @@ export const DataPreview = (props) => {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/v1/projects/${projectId}/keys`).then((result) => {
+    axios.get(`/api/v1/projects/${projectId}/keys`).then((result) => {
       let res = result.data
       setKeys(res)
   })

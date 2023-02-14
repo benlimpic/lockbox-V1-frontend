@@ -58,7 +58,7 @@ export const FormMatrix = ({
     e.preventDefault();
     setIsLoading(true);
     let userId = []
-    axios.get("http://localhost:3000/logged_in", { withCredentials: true }).then((response) => {
+    axios.get("/logged_in", { withCredentials: true }).then((response) => {
       console.log("Create ",response)
       console.log("userId defined", userId);
       userId = response.data.user.id
@@ -66,7 +66,7 @@ export const FormMatrix = ({
     .then(() => {
     axios
       .post(
-        "http://localhost:3000/api/v1/projects/",
+        "/api/v1/projects/",
         {
           mac: maxAC,
           tmk: JSON.stringify(tmk),

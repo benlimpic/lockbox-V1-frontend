@@ -22,7 +22,7 @@ function AreYouSure(props) {
     e.preventDefault();
     if (deleteConfirm === "DELETE") {
       axios
-        .delete(`http://localhost:3000/api/v1/projects/${props.projectId}`)
+        .delete(`/api/v1/projects/${props.projectId}`)
         .then((res) => {
           console.log(res);
           console.log(res.data);
