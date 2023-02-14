@@ -12,6 +12,11 @@ import axios from "axios";
 import SmallMatrix from "../../../Data/Create/smallMatrix.js";
 import "../../../../App.css";
 
+async function getUser() {
+  const response = await axios.get("/logged_in", { withCredentials: true })
+  return response.data.user.id
+}
+
 export const FormMatrix = ({
   tmk,
   sop,
@@ -54,17 +59,11 @@ export const FormMatrix = ({
     }, 1000);
   };
 
-  let userId = ""
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    axios.get("/logged_in", { withCredentials: true }).then((response) => {
-      console.log("Create ",response)
-      userId = (response.data.user.id)
-      console.log("userId defined", userId);
-    })
-    .then(() => {
+
     axios
       .post(
         "/api/v1/projects/",
@@ -86,12 +85,10 @@ export const FormMatrix = ({
           contactEmail,
           contactPhone,
           contactDetails,
-          user_id: userId
+          user_id: getUser(),
         })
       .then((response) => {
         if (response.statusText === "Created") {
-          console.log("Success", response);
-          console.log("response.data.id", response.data.id);
           navigate(`/projects/${response.data.id}`)
         }
         else {
@@ -100,7 +97,6 @@ export const FormMatrix = ({
     }).catch((error) => {
       console.log("create error", error);
     })
-  })
 };
 
   return (
