@@ -14,7 +14,7 @@ import "../../../../App.css";
 
 async function getUser() {
   const response = await axios.get("/logged_in", { withCredentials: true })
-  return response.data.user
+  return response.data.user.id
 }
 
 export const FormMatrix = ({
