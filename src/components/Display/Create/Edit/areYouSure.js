@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 import { Modal, Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -7,6 +8,9 @@ import axios from "axios";
 
 
 function AreYouSure(props) {
+
+  const navigate = useNavigate();
+
   const [yesDelete, setYesDelete] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState("");
 
@@ -26,7 +30,7 @@ function AreYouSure(props) {
         .then((res) => {
           console.log(res);
           console.log(res.data);
-          window.location = `/projects`;
+          navigate(`/projects`)
         })
         .catch((err) => console.log(err.full_messages));
     }

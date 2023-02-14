@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Modal, Button } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom'
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,6 +11,7 @@ function AreYouSure(props) {
   const [yesDelete, setYesDelete] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState("");
 
+  const navigate = useNavigate();
   let returnProjectId = props.projectId;
 
   const handleYesDelete = () => {
@@ -28,7 +30,7 @@ function AreYouSure(props) {
         .then((res) => {
           console.log(res);
           console.log(res.data);
-          window.location = `/projects/`;
+          navigate(`/projects/${props.projectId}`)
         })
         .catch((err) => console.log(err.full_messages));
     }
