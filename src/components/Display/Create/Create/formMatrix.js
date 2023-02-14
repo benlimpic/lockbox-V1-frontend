@@ -57,13 +57,7 @@ export const FormMatrix = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    let userId = 1
-    axios.get("/logged_in", { withCredentials: true }).then((response) => {
-      console.log("Create ",response)
-      console.log("userId defined", userId);
-      userId = response.data.user.id
-    })
-    .then(() => {
+    
     axios
       .post(
         "/api/v1/projects/",
@@ -85,7 +79,7 @@ export const FormMatrix = ({
           contactEmail,
           contactPhone,
           contactDetails,
-          user_id: userId
+          user_id: 1
         })
       .then((response) => {
         if (response.statusText === "Created") {
@@ -99,7 +93,6 @@ export const FormMatrix = ({
     }).catch((error) => {
       console.log("create error", error);
     })
-  })
 };
 
   return (
