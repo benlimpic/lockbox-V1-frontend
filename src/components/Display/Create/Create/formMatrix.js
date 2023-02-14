@@ -89,6 +89,8 @@ export const FormMatrix = ({
         })
       .then((response) => {
         if (response.statusText === "Created") {
+          console.log("Success", response);
+          console.log("response.data.id", response.data.id);
           navigate(`/projects/${response.data.id}`)
         }
         else {
