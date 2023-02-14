@@ -54,14 +54,15 @@ export const FormMatrix = ({
     }, 1000);
   };
 
+  let userId = ""
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    let userId = 1
     axios.get("/logged_in", { withCredentials: true }).then((response) => {
       console.log("Create ",response)
+      userId = (response.data.user.id)
       console.log("userId defined", userId);
-      userId = response.data.user.id
     })
     .then(() => {
     axios
