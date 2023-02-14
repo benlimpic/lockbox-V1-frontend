@@ -21,6 +21,7 @@ export const FormMatrix = ({
   setSmallMatrix,
   maxAC,
   showKBA,
+  user
 }) => {
   const [siteKeyway, setSiteKeyway] = useState("Keyway");
   const [dateCreated, setCreatedDate] = useState("");
@@ -79,12 +80,10 @@ export const FormMatrix = ({
           contactEmail,
           contactPhone,
           contactDetails,
-          user_id: 1
+          user_id: user
         })
       .then((response) => {
         if (response.statusText === "Created") {
-          console.log("Success", response);
-          console.log("response.data.id", response.data.id);
           navigate(`/projects/${response.data.id}`)
         }
         else {

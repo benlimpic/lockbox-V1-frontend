@@ -1,10 +1,10 @@
 import React from "react";
 import SubmitMatrix from "../components/Display/Create/Create/submitMatrix";
 
-export const Create = () => {
+export const Create = (props) => {
   return (
     <div>
-      <SubmitMatrix />
+      <SubmitMatrix user={props.user}/>
     </div>
   );
 };

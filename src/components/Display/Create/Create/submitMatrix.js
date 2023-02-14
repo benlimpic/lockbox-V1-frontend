@@ -66,6 +66,7 @@ export const SubmitMatrix = (props) => {
             dataMatrix={dataMatrix}
             setDataMatrix={setDataMatrix}
             showKBA={showKBA}
+            user={props.user}
 
           />
         </div>
