@@ -13,7 +13,6 @@ import LoginSignUp from "./Pages/loginSignup";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [user, setUser] = useState("");
 
   const handleIsLoggedIn = () => {
     axios
@@ -21,7 +20,6 @@ function App() {
       .then((response) => {
         console.log("logged_in response", response);
         if (response.data.logged_in) {
-          setUser(response.data.user.id)
           setLoggedIn(true);
         } else {
           setLoggedIn(false);
@@ -34,7 +32,7 @@ function App() {
 
   useEffect(() => {
     handleIsLoggedIn();
-  }, [setUser]);
+  }, []);
 
     return (
 
@@ -44,7 +42,7 @@ function App() {
     <Routes>
       <Route path="/" element={<NavBar setLoggedIn={setLoggedIn} />}>
         <Route index element={<Home />} />
-        <Route path="/create" element={<Create user={user}/>} />
+        <Route path="/create" element={<Create />} />
         <Route path="/projects">
           <Route index element={<ProjectsPage />} />
           <Route path=":id" element={<ProjectPage />} />

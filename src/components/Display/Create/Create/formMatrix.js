@@ -21,7 +21,6 @@ export const FormMatrix = ({
   setSmallMatrix,
   maxAC,
   showKBA,
-  user
 }) => {
   const [siteKeyway, setSiteKeyway] = useState("Keyway");
   const [dateCreated, setCreatedDate] = useState("");
@@ -58,7 +57,13 @@ export const FormMatrix = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
+    let userId = 1
+    axios.get("/logged_in", { withCredentials: true }).then((response) => {
+      console.log("Create ",response)
+      console.log("userId defined", userId);
+      userId = response.data.user.id
+    })
+    .then(() => {
     axios
       .post(
         "/api/v1/projects/",
@@ -80,10 +85,12 @@ export const FormMatrix = ({
           contactEmail,
           contactPhone,
           contactDetails,
-          user_id: user
+          user_id: userId
         })
       .then((response) => {
         if (response.statusText === "Created") {
+          console.log("Success", response);
+          console.log("response.data.id", response.data.id);
           navigate(`/projects/${response.data.id}`)
         }
         else {
@@ -92,6 +99,7 @@ export const FormMatrix = ({
     }).catch((error) => {
       console.log("create error", error);
     })
+  })
 };
 
   return (
