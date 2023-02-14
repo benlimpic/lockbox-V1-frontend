@@ -30,7 +30,7 @@ function AreYouSure(props) {
         .then((res) => {
           console.log(res);
           console.log(res.data);
-          navigate(`/projects`)
+          navigate(`/projects/${props.projectId}`)
         })
         .catch((err) => console.log(err.full_messages));
     }
