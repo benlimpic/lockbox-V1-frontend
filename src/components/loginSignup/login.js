@@ -9,16 +9,13 @@ const Login = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .post(
-        "/sessions",
+    axios.post("/sessions", { withCredentials: true },
         {
           user: {
             email,
             password,
           },
-        },
-        { withCredentials: true }
+        }
       )
       .then((response) => {
         console.log(response);
